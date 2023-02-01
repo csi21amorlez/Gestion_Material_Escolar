@@ -20,7 +20,7 @@
 		<property name="driverClassName"
 			value="org.postgresql.Driver"></property>
 		<property name="url"
-			value="jdbc:postgresql://localhost:5433/bd_gestion_material_escolar"></property>
+			value="jdbc:postgresql://localhost:5432/bd_gestion_material_escolar"></property>
 		<property name="username" value="postgres"></property>
 		<property name="password" value="root123"></property>
 	</bean>

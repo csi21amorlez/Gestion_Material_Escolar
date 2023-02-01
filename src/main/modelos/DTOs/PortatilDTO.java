@@ -4,6 +4,7 @@ package main.modelos.DTOs;
 /**
  * The Class PortatilDTO.
  */
+
 public class PortatilDTO {
 
 	/** The cod portatil. */

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -49,8 +50,9 @@ public class Portatil {
 	private String marca;
 	
 	/** The alumno asignado. */
-	@Column(name = "alumno_asignado")
-	@OneToOne
+	
+	@OneToOne(mappedBy = "portatilAsignado")
+	@JoinColumn(name = "alumno_asignado")
 	private Alumno alumnoAsignado;
 	
 	/**

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import main.modelos.Convertidores.DtoToImpl;
 import main.modelos.Convertidores.ToDtoImpl;
@@ -14,7 +14,7 @@ import main.modelos.DAL.Portatil.PortatilImpl;
 import main.modelos.DTOs.AlumnoDTO;
 import main.modelos.DTOs.PortatilDTO;
 
-@Component
+@Service
 public class Consultas {
 
 	@Autowired

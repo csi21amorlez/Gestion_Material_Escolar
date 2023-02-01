@@ -2,11 +2,14 @@ package main.modelos.Convertidores;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import main.modelos.DAL.Alumno.Alumno;
 import main.modelos.DAL.Portatil.Portatil;
 import main.modelos.DTOs.AlumnoDTO;
 import main.modelos.DTOs.PortatilDTO;
 
+@Component
 public class ToDtoImpl implements ToDtoService {
 
 	@Override

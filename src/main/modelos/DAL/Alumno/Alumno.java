@@ -59,9 +59,8 @@ public class Alumno {
 	@Column(name = "numero_telefono")
 	private String numTlf;
 
-	/** The portatil asignado. */
-	@Column(name = "portatil_asignado")
-	@OneToOne(mappedBy = "alumnoAsignado")
+	/** The portatil asignado. */	
+	@OneToOne()
 	private Portatil portatilAsignado;
 
 	/**

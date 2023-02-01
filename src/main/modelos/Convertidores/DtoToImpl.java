@@ -5,12 +5,14 @@ import java.util.Calendar;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import main.modelos.DAL.Alumno.Alumno;
 import main.modelos.DAL.Portatil.Portatil;
 import main.modelos.DTOs.AlumnoDTO;
 import main.modelos.DTOs.PortatilDTO;
 
+@Component
 public class DtoToImpl implements DtoToService {
 
 	Calendar fecha = Calendar.getInstance();
