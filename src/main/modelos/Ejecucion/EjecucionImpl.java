@@ -27,6 +27,7 @@ public class EjecucionImpl implements EjecucionService {
 	Scanner sc = new Scanner(System.in);
 	ApplicationContext ac = new ClassPathXmlApplicationContext("context.xml");
 	AlumnoDTO alumno = ac.getBean(AlumnoDTO.class);
+	PortatilDTO portatil = ac.getBean(PortatilDTO.class);
 
 	@Override
 	public void matricularAlumno() {
@@ -77,8 +78,6 @@ public class EjecucionImpl implements EjecucionService {
 			
 		} catch (Exception e) {
 			System.out.println("[ERROR DESCONOCIDO]");
-		} catch  {
-			// TODO: handle exception
 		}
 		
 
@@ -86,8 +85,14 @@ public class EjecucionImpl implements EjecucionService {
 
 	@Override
 	public void altaPortatil() {
-		// TODO Auto-generated method stub
-
+		System.out.println("[INFO] -- Introduzca la marca del portatil");
+		portatil.setCodPortatil(sc.next());
+		System.out.println("[INFO] -- Introduzca el modelo del portatil");
+		portatil.setModeloPortatil(sc.next());
+		System.out.println("[INFO] -- Introduzca el nombre del alumno asignado");
+		portatil.setAlumnoAsignado(cons.findAlumnoByNombre(sc.next()));
+		System.out.println("[INFO] -- Introduzca el codigo del portatil");
+		portatil.setCodPortatil(sc.next());
 	}
 
 	@Override
