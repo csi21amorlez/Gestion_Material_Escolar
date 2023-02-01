@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Service;
 
 import main.modelos.Consultas.Consultas;
@@ -25,12 +26,12 @@ public class EjecucionImpl implements EjecucionService {
 
 	Scanner sc = new Scanner(System.in);
 	ApplicationContext ac = new ClassPathXmlApplicationContext("context.xml");
+	AlumnoDTO alumno = ac.getBean(AlumnoDTO.class);
 
 	@Override
 	public void matricularAlumno() {
 
 		try {
-			AlumnoDTO alumno = ac.getBean(AlumnoDTO.class);
 
 			System.out.println("[INFO] -- Matricular alumno");
 
@@ -63,8 +64,23 @@ public class EjecucionImpl implements EjecucionService {
 
 	@Override
 	public void eliminarAlumno() {
+
+		try {
+			System.out.println("[INFO] -- Introduzca el nombre del alumno a eliminar");
+			alumno = cons.findAlumnoByNombre(sc.next());
+			System.out.println("[INFO] -- Introduzca el nombre de nuevo para confirmar" + alumno.getNombreCompleto());
+			String confirmacion = sc.next();
+			if (confirmacion == alumno.getNombreCompleto())
+				cons.eliminarAlumno(alumno);
+			else
+				System.out.println("[INFO] -- El nombre introducido no coincide con el del usuairo");
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR DESCONOCIDO]");
+		} catch  {
+			// TODO: handle exception
+		}
 		
-		System.out.println();
 
 	}
 
