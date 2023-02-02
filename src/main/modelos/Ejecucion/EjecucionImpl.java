@@ -115,7 +115,8 @@ public class EjecucionImpl implements EjecucionService {
 
 	@Override
 	public void consultarAlumnos() {
-		// TODO Auto-generated method stub
+		System.out.println("[INFO] -- Introduzca el numero del ");
+		
 
 	}
 
