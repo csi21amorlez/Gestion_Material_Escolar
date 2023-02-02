@@ -52,7 +52,6 @@ public class Portatil {
 	/** The alumno asignado. */
 	
 	@OneToOne(mappedBy = "portatilAsignado")
-	@JoinColumn(name = "alumno_asignado")
 	private Alumno alumnoAsignado;
 	
 	/**

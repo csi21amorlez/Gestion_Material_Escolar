@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * The Interface PortatilService.
  */
 public interface PortatilService {
-	
+
 	/**
 	 * Find by codigo.
 	 *
@@ -15,21 +15,21 @@ public interface PortatilService {
 	 * @return the portatil
 	 */
 	public Portatil findByCodigo(String codigo);
-	
+
 	/**
 	 * Buscar todos.
 	 *
 	 * @return the array list
 	 */
 	public ArrayList<Portatil> buscarTodos();
-	
+
 	/**
 	 * Insertar portatil.
 	 *
 	 * @param portatil the portatil
 	 */
 	public void insertarPortatil(Portatil portatil);
-	
+
 	/**
 	 * Eliminar portatil.
 	 *
@@ -37,5 +37,4 @@ public interface PortatilService {
 	 */
 	public void eliminarPortatil(Portatil portatil);
 
-	
 }

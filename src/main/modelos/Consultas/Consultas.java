@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import main.modelos.Convertidores.DtoToImpl;
 import main.modelos.Convertidores.ToDtoImpl;
+import main.modelos.DAL.Alumno.Alumno;
 import main.modelos.DAL.Alumno.AlumnoImpl;
 import main.modelos.DAL.Portatil.PortatilImpl;
 import main.modelos.DTOs.AlumnoDTO;
@@ -64,6 +65,10 @@ public class Consultas {
 	@Transactional
 	public PortatilDTO findPortatilByCode(String codigo) {
 		return toDto.portatilToDto(portatil.findByCodigo(codigo));
+	}
+	@Transactional
+	public AlumnoDTO findAlumnoByCode(int code) {
+		return toDto.alumnoToDto(alumno.findByNumero(code));
 	}
 
 }

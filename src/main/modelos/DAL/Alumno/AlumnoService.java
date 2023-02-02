@@ -19,6 +19,7 @@ public interface AlumnoService {
 	 * Find by nombre.
 	 *
 	 * @param nombre the nombre
+	 * @return the alumno
 	 */
 	public Alumno findByNombre(String nombre);
 	
@@ -35,6 +36,15 @@ public interface AlumnoService {
 	 * @return the array list
 	 */
 	public ArrayList<Alumno> buscarTodos();
+	
+	/**
+	 * Find by numero.
+	 *
+	 * @param numero the numero
+	 * @return the alumno
+	 */
+	public Alumno findByNumero(int numero);
+	
 	
 	
 	

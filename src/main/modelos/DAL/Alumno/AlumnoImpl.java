@@ -38,4 +38,10 @@ public class AlumnoImpl implements AlumnoService {
 		return (ArrayList<Alumno>) em.createQuery(sql);
 	}
 
+
+	public Alumno findByNumero(int numero) {
+		String sql = "From Alumno a where a.codAlumno=" + numero;
+		return (Alumno) em.createQuery(sql).getSingleResult();
+	}
+
 }

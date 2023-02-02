@@ -1,5 +1,6 @@
 package main.modelos.Ejecucion;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +98,18 @@ public class EjecucionImpl implements EjecucionService {
 
 	@Override
 	public void consultarPortatiles() {
-		// TODO Auto-generated method stub
+		try {
+			System.out.println("[INFO] -- Introduzca el codigo del alumno");
+			alumno = cons.findAlumnoByCode(sc.nextInt());
+			portatil = cons.findPortatilByCode(alumno.getPortatilAsignado().getCodPortatil());
+			System.out.println("Alumno asignado al portatil: " + alumno.toString());
+			System.out.println("Portatil perteneciente al alumno: " + portatil.toString());
+		} catch (Exception e) {
+			System.out.println("[ERROR DESCONOCIDO]");
+		}
+		
+		
+		
 
 	}
 

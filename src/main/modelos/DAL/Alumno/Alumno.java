@@ -60,7 +60,7 @@ public class Alumno {
 	private String numTlf;
 
 	/** The portatil asignado. */	
-	@OneToOne()
+	@OneToOne
 	private Portatil portatilAsignado;
 
 	/**
