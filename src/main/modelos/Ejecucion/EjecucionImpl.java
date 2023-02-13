@@ -115,8 +115,13 @@ public class EjecucionImpl implements EjecucionService {
 
 	@Override
 	public void consultarAlumnos() {
-		System.out.println("[INFO] -- Introduzca el numero del ");
-		
+		System.out.println("[INFO] -- Introduzca el numero del portatil");
+		portatil = cons.findPortatilByCode(sc.next());
+		if(portatil == alumno.getPortatilAsignado()) {
+			System.out.println("Portatil asignado al alumno: " + portatil.toString());
+			System.out.println("Alumno propietario: " + alumno.toString());
+		}
+			
 
 	}
 

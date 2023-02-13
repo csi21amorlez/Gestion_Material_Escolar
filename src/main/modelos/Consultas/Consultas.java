@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import main.modelos.Convertidores.DtoToImpl;
@@ -18,14 +20,15 @@ import main.modelos.DTOs.PortatilDTO;
 @Service
 public class Consultas {
 
-	@Autowired
-	AlumnoImpl alumno;
-	@Autowired
-	PortatilImpl portatil;
-	@Autowired
-	ToDtoImpl toDto;
-	@Autowired
-	DtoToImpl dtoTo;
+	ApplicationContext ac = new ClassPathXmlApplicationContext("context.xml");
+	
+	private final AlumnoImpl alumno = ac.getBean(AlumnoImpl.class);
+	
+	private final PortatilImpl portatil = ac.getBean(PortatilImpl.class);;
+	
+	private final ToDtoImpl toDto = ac.getBean(ToDtoImpl.class);;
+	
+	private final DtoToImpl dtoTo = ac.getBean(DtoToImpl.class);;
 
 	@Transactional
 	public void insertarPortatil(PortatilDTO dto) {
@@ -66,6 +69,7 @@ public class Consultas {
 	public PortatilDTO findPortatilByCode(String codigo) {
 		return toDto.portatilToDto(portatil.findByCodigo(codigo));
 	}
+
 	@Transactional
 	public AlumnoDTO findAlumnoByCode(int code) {
 		return toDto.alumnoToDto(alumno.findByNumero(code));

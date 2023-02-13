@@ -32,8 +32,8 @@ public class Portatil {
 	
 	/** The id. */
 	@Id
-	@SequenceGenerator(name = "portatil_idportatil_seq", sequenceName = "portatil_idportatil_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "portatil_idportatil_seq")
+	@SequenceGenerator(name = "portatil_seq", sequenceName = "portatil_idportatil_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "portatil_seq")
 	@Column(name = "id_portatil")
 	private int id;
 	

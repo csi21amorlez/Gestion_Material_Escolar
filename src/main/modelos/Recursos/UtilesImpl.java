@@ -4,9 +4,9 @@ package main.modelos.Recursos;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UtilesImpl {
+public class UtilesImpl implements UtilesService {
 
-	public static void menu() {
+	public void menu() {
 		System.out.println("\n\n\n\n\n\n\t\t\t╔══════════════════════════════════════╗");
 		System.out.println("\t\t\t║ Opciones de la Gasolinera                  ║");
 		System.out.println("\t\t\t╠════════════════════════════════════════════╣");

@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PortatilImpl implements PortatilService {
-	
+
 	@PersistenceContext
 	EntityManager em;
 
 	@Override
 	public Portatil findByCodigo(String codigo) {
-		String sql  = "FROM Portatil p where p.codPortatil = " + codigo;
-		return (Portatil)em.createQuery(sql).getSingleResult() ;
+		String sql = "FROM Portatil p where p.codPortatil = " + codigo;
+		return (Portatil) em.createQuery(sql).getSingleResult();
 	}
 
 	@Override

@@ -13,9 +13,12 @@ public class AlumnoImpl implements AlumnoService {
 	@PersistenceContext
 	EntityManager em;
 
+	
+
 	@Override
 	public void insertarAlumno(Alumno alumno) {
 		em.persist(alumno);
+		em.clear();
 
 	}
 

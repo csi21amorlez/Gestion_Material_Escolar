@@ -8,6 +8,7 @@ import main.modelos.DAL.Portatil.Portatil;
  */
 public class AlumnoDTO {
 	
+	
 	/** The nombre completo. */
 	private String nombreCompleto;
 

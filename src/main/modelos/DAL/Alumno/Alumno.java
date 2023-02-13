@@ -46,8 +46,8 @@ public class Alumno {
 
 	/** The id. */
 	@Id
-	@SequenceGenerator(name = "alumno_idalumno_seq", sequenceName = "alumno_idalumno_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "alumno_idalumno_seq")
+	@SequenceGenerator(name = "alumno_seq", sequenceName = "alumno_idalumno_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "alumno_seq")
 	@Column(name = "id_alumno")
 	private int id;
 
